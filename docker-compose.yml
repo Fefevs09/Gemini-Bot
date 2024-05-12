@@ -1,0 +1,11 @@
+
+services:
+  bot:
+    build:
+      context: .
+      dockerfile: Dockerfile  # Assuming you have a Dockerfile in your project root
+    image: aliados-bot:latest  # Give your image a name
+    volumes:
+      - ./app:/app  # Mount the 'app' directory inside the container
+    working_dir: /app  # Set the working directory inside the container
+    command: python main.py  # Run your 'main.py' script
